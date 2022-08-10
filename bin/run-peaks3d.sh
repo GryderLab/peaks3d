@@ -1,4 +1,10 @@
 #!/bin/bash -l
+BASEDIR=$(dirname $(realpath "$0"));
+for f in $BASEDIR/../src/*.sh;do
+        . $f
+done
+export PATH=$PATH:$BASEDIR/bin
+
 intro="
 LastUpdate: 3/06/22
 By	: Hyunmin Kim (hxk728@case.edu)
@@ -81,8 +87,8 @@ output=$output
 "
 
 ## read functions
-source $BABY_HOME/inst/bin/src_bedpe.sh
-source $BABY_HOME/inst/bin/src_util.sh
+#source $BABY_HOME/inst/bin/src_bedpe.sh
+#source $BABY_HOME/inst/bin/src_util.sh
 #echo "tools available:"
 #declare -F 
 
@@ -120,7 +126,7 @@ sz(){
 	echo "	=> $1 (n=$size)"
 }
 
-myapa=$BABY_HOME/aqua_tools/plot_APA.sh
+#myapa=$BABY_HOME/aqua_tools/plot_APA.sh
 
 if [ -d $output ];then
 	echo "Warn: overwriting into $output .. ">&2;
@@ -150,9 +156,9 @@ for (( i=0; i < ${#samples[@]}; i++ )); do
 	if [ `nz $o` ];then 
 		echo "	skip making $o"
 	else
-		#annotate_loops.sh -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
-		. $BABY_HOME/inst/bin/src_hic.sh;
-		annotate-loops -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
+		annotate_loops.sh -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
+		#. $BABY_HOME/inst/bin/src_hic.sh;
+		#annotate-loops -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
 		echo " 	=> $o"
 	fi
 	if [ `wc -l $o | cut -d" " -f 1` -lt 10 ];then
@@ -188,7 +194,6 @@ for (( i=0; i < ${#samples[@]}; i++ )); do
 	o=$n2.filtered.bedpe
 	bedpe-filter $n.annotated.bedpe $mindist $maxdist $minscore > $n2.filtered.bedpe
 	sz $n2.filtered.bedpe
-
 ## STEP 4
 	echo "STEP 4: clustering"
 	bedpe-cluster $n2.filtered.bedpe  $mincluster > $n2.clustered.bedpe
@@ -212,11 +217,20 @@ for (( i=0; i < ${#samples[@]}; i++ )); do
 
 ## STEP 5
 	echo "STE 5: APA plotting"
-	$myapa -O $output/notclustered -G hg38 -P $n2.notclustered.bedpe -A $sample $APA_options &> /dev/null;
-	$myapa -O $output/clustered -G hg38 -P $n2.clustered.bedpe -A $sample $APA_options  &> /dev/null;
-	for f in `ls $output/*clustered/*/*/*.png`;do
-		echo "	=> $f"
-	done
+	tmp=${n2#*\/};
+
+	if [ ! -f $output/notclustered/${tmp}/$sample/APA_cpm.pdf ];then
+		plot_APA.sh -O $output/notclustered -G hg38 -P $n2.notclustered.bedpe -A $sample $APA_options &> /dev/null;
+		echo "	=> $output/notclustered/${tmp}/$sample/APA_cpm.pdf"
+	else
+		echo "	skip : exists $output/notclustered/${tmp}/$sample/APA_cpm.pdf"
+	fi
+	if [ ! -f $output/clustered/${tmp}/$sample/APA_cpm.pdf ];then
+		plot_APA.sh -O $output/clustered -G hg38 -P $n2.clustered.bedpe -A $sample $APA_options  &> /dev/null;
+		echo "	=> $output/clustered/${tmp}/$sample/APA_cpm.pdf"
+	else
+		echo "	skip : exists $output/clustered/${tmp}/$sample/APA_cpm.pdf"
+	fi
 
 
 
@@ -238,7 +252,7 @@ for (( i=0; i < ${#samples[@]}; i++ )); do
 	mkdir -p $output/GRACE_plots
 	loopsname=${peak##*/}; loopsname=${loopsname%.bed}
 	peaks3Dname=${n2#*/};
-	cat $BABY_HOME/inst/bin/grace_plots.r |\
+	cat $BASEDIR/../src/grace_plots.r |\
 		 sed  "s#%peaks3Dname%#$peaks3Dname#" |\
 		 sed  "s#%loops.name%#$loopsname#" |\
 		 sed  "s#%output%#$output#" > $output/GRACE_plots.R 

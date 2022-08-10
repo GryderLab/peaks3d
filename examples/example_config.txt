@@ -1,0 +1,23 @@
+	tad=/home/ubuntu/shared/hg38/ref/TAD_goldsorted_span.hg38.bed
+	peaks=(
+		AR_master.bed
+	)
+	samples=(
+		LNCaPXIP_AR_dupin
+	)
+
+	## function parameters
+	binsize=5000  # binsize for annotate_loops.sh
+	mindist=25k   # min distance
+	maxdist=3m    # max distance to make fitered.bedpe files
+	minscore=0.05  # minimum annotated.bedpe score (AQuA CPM)
+	mincluster=2
+
+	APAbinsize=1000
+	APA_options="--cpml"
+
+	Annotate_options=" -Q aqua"
+
+	## output directory
+	output=AR_GRACE_hmk_v2
+
