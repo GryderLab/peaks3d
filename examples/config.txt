@@ -1,4 +1,4 @@
-	tad=/home/ubuntu/shared/hg38/ref/TAD_goldsorted_span.hg38.bed
+tad=/home/ubuntu/shared/hg38/ref/TAD_goldsorted_span.hg38.bed
 	peaks=(
 		AR_master.bed
 	)
@@ -20,4 +20,3 @@
 
 	## output directory
 	output=AR_GRACE_hmk_v2
-
