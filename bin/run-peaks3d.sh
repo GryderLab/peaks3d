@@ -156,9 +156,9 @@ for (( i=0; i < ${#samples[@]}; i++ )); do
 	if [ `nz $o` ];then 
 		echo "	skip making $o"
 	else
-		annotate_loops.sh -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
-		#. $BABY_HOME/inst/bin/src_hic.sh;
-		#annotate-loops -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
+		#annotate_loops.sh -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
+		. $BABY_HOME/inst/bin/src_hic.sh;
+		annotate-loops -G hg38 -P $n.bedpe -A $sample -R $binsize $Annotate_options > $o
 		echo " 	=> $o"
 	fi
 	if [ `wc -l $o | cut -d" " -f 1` -lt 10 ];then
