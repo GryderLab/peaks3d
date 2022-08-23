@@ -1,0 +1,2 @@
+ . ../src/hic.sh; annotate-loops LNCaPXIP_AR_dupin 5000  AR_GRACE_hmk_v2/AR_master_LNCaPXIP_AR_dupin.bedpe
+
