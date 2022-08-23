@@ -18,7 +18,7 @@ Software components and steps within peaks3D:
 ## Example peaks3D and GRACE output:
 Summary data figure:
 <p align="left"> <img width="400" src="examples/peaks3D_GRACE_summary.png"></p>
-Genic Rank of Clustered Elements plots:
+Genic Rank of Active Clustered Elements plots:
 <p align="left"> <img width="700" src="examples/peaks3D_GRACE_rank_plots.png"></p>
 
 ## dependency 
