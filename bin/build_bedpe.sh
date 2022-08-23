@@ -90,5 +90,4 @@ if [ -z "$d" ]; then d=0;       fi
 if [ -z "$D" ]; then D=5000000; fi
 
 
-
 Rscript $aqua_dir/build_bedpe.r $A $B $T $d $D
