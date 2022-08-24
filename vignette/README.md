@@ -135,5 +135,5 @@ Look at the APA plots to see the difference of 3D structures between clustered a
 
 | clustered | not clustered |
 |-------------------------|:-------------------------:|
-| ![](../examples/AR_GRACE_hmk_v2/clustered/LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7/LNCaPXIP_DMSO_H3K27ac/APA_cpm-1.png) |  ![](../examples/AR_GRACE_hmk_v2/notclustered/LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7/LNCaPXIP_DMSO_H3K27ac/APA_cpm-1.png) | 
+| ![](../examples/AR_GRACE_hmk_v2/clustered/LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7/LNCaPXIP_DMSO_H3K27ac/APA_cpm.png-1.png) |  ![](../examples/AR_GRACE_hmk_v2/notclustered/LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7/LNCaPXIP_DMSO_H3K27ac/APA_cpm.png-1.png) | 
 
