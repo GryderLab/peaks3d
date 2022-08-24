@@ -176,8 +176,6 @@ for (( i=0; i < ${#samples[@]}; i++ )); do
 	echo " --- Stop here: report this issue @ Slack::tinker channel"
 	exit 1
 	fi
-	## test
-exit
 
 	echo "STEP 2.1 QC plot"
 	o=$n.annotated.bedpe.qc
