@@ -9,8 +9,8 @@
 #loops.name = "LNCaPXIP_CnR_K27ac_p-7"
 #peaks3Dname = "LNCaPXIP_CnR_K27ac_p-7_LNCaPXIP_DMSO_H3K27ac_10k_4m"
 
-peaks3Dname = "AR_master_LNCaPXIP_AR_dupin_25k_3m_0p05";
-loops.name="AR_master";
+peaks3Dname = "LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7.nobl_LNCaPXIP_DMSO_H3K27ac_25k_3m_0p05";
+loops.name="LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7.nobl";
 output="AR_GRACE_hmk_v2";
 setwd(output);
 odir="GRACE_plots/";

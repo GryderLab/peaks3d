@@ -110,7 +110,7 @@ The summary of the distance and score distributions give us an idea of how to se
 Based on this observation we set the CPM threshold >= 0.2.
 |  LNCaPXIP_AR_122121_SEK_NovoG_MACS_p-5.nobl.annotated.bedpe | LNCaPXIP_BG15n_H3K27ac_122121_SEK_NovoG_MACS_p-5.nobl.annotated.bedpe |
 |-------------------------|:-------------------------:|
-|![](LNCaPXIP_AR_122121_SEK_NovoG_MACS_p-5.nobl.annotated.bedpe.qc.png) | ![](LNCaPXIP_BG15n_H3K27ac_122121_SEK_NovoG_MACS_p-5.nobl.annotated.bedpe.qc.png) |
+|![](LNCaPXIP_AR_122121_SEK_NovoG_MACS_p-5.nobl.annotated.bedpe.qc.png) | ![](../examples/AR_GRACE_hmk_v2/LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7.nobl_LNCaPXIP_DMSO_H3K27ac.annotated.bedpe.gt_25k.qc.png ) |
 | LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7.nobl.annotated.bedpe | LNCaPXIP_CTCF_122121_SEK_NovoG_MACS_p-14.nobl.annotated.bedpe |
 | ![](LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7.nobl.annotated.bedpe.qc.png) |![](LNCaPXIP_CTCF_122121_SEK_NovoG_MACS_p-14.nobl.annotated.bedpe.qc.png)|
 

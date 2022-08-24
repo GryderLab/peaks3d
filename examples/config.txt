@@ -1,9 +1,11 @@
 tad=/home/ubuntu/shared/hg38/ref/TAD_goldsorted_span.hg38.bed
 	peaks=(
 		AR_master.bed
+		LNCaPXIP_DMSO_H3K27ac_122121_SEK_NovoG_MACS_p-7.nobl.bed
 	)
 	samples=(
 		LNCaPXIP_AR_dupin
+		LNCaPXIP_DMSO_H3K27ac
 	)
 
 	## function parameters
